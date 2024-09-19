@@ -7,6 +7,11 @@ ami - (Mandatory) This is string format, User must have to provide this in user 
 instance_type - (Optional). This is optional, if didn't provided terraform will take default value as "t3.micro". This is also string format.
 vpc_security_group_ids - (Mandatory), This is list of string format, user must have to provide this in user module.
 
+validation {
+        condition = contains(["t3.micro","t3.medium","t3.nano"], var.instance_type)
+        error_message = "instance_type should only be ("t3.micro","t3.medium","t3.nano")"
+    }
+
 
 ##Outputs
 
