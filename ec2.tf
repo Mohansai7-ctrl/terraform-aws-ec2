@@ -1,3 +1,5 @@
+#its child module is ec2-module-demo
+
 resource "aws_instance" "terraform" {    #This is resource definition block
     #arguments = values
     ami = var.ami_id
