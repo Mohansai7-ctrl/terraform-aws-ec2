@@ -7,9 +7,10 @@ variable "instance_type_info" {
     default = "t3.micro"
     validation {
         condition = contains(["t3.micro","t3.medium","t3.nano"], var.instance_type_info)
-        error_message = "instance_type should only be (t3.micro,t3.medium,t3.nano)"
+        error_message = "instance_type should only be (t3.micro,t3.medium,t3.nano)"  #if any other instance_type other than mentioned in above condition used, then this error message will pop up to user.
     }
 }
+
 
 variable "security_group_id" {
     type = list(string)
